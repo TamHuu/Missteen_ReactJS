@@ -10,6 +10,7 @@ import Rules from "../pages/pageRules";
 import DenseTable from "../pages/pageManager";
 import Register from "../pages/pageRegister";
 import Album from "../pages/listCandicates";
+import LogoHH from "../../assets/img/LogoHHV.png"
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -94,7 +95,7 @@ export default function Navigation() {
           />
           <div className="logo">
             <img
-              src="http://hhvn.com.vn/wp-content/uploads/2020/05/Logo-HHVn2020-1024x294.png"
+              src={LogoHH}
               style={{ width: "200px", marginLeft: "500px" }}
             ></img>
           </div>
