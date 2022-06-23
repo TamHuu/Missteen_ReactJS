@@ -1,11 +1,11 @@
 import * as React from "react";
 import { styled } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-
+import CoverWeb from "../../assets/img/Cover-Web.jpg"
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Typography from "@material-ui/core/Typography";
-import  Tabs  from "@material-ui/core/Tabs";
+
 
 const drawerWidth = 240;
 
@@ -61,7 +61,7 @@ export default function Rules() {
           {" "}
           <img
             style={{ width: "100%", height: "438px" ,marginTop:'-58px'}}
-            src="http://hhvn.com.vn/wp-content/uploads/2020/11/Cover-Web.jpg"
+            src={CoverWeb}
             alt=""
           />{" "}
         </Typography>
