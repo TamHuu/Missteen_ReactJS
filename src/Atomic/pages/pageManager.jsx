@@ -8,7 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
+
 import { lists } from "../service/list";
 
 import { IconButton } from "@material-ui/core";
@@ -36,7 +36,7 @@ export default function DenseTable() {
   };
   return (
     <TableContainer component={Paper} style={{ padding: "40px" }}>
-      <div
+      {/* <div
         style={{
           fontSize: "30px",
           backgroundColor: "mediumvioletred",
@@ -46,7 +46,7 @@ export default function DenseTable() {
         }}
       >
         Quản lý danh sách thí sinh
-      </div>
+      </div> */}
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
@@ -57,11 +57,11 @@ export default function DenseTable() {
             <TableCell style={{ fontSize: "20px" }} align="left">
               Hình ảnh
             </TableCell>
-            <TableCell style={{ fontSize: "20px" }} align="center">
+            {/* <TableCell style={{ fontSize: "20px" }} align="center">
               Tuổi
-            </TableCell>
+            </TableCell> */}
             <TableCell style={{ fontSize: "20px" }} align="left">
-              Quê quán
+              Năm Sinh
             </TableCell>
             <TableCell style={{ fontSize: "20px" }} align="left">
               Chiều cao
@@ -87,7 +87,7 @@ export default function DenseTable() {
               <TableCell align="center">
                 <Avatar src={list.img} variant="square"></Avatar>
               </TableCell>
-              <TableCell align="left">{list.age}</TableCell>
+              {/* <TableCell align="left">{list.age}</TableCell> */}
               <TableCell align="left">{list.born}</TableCell>
               <TableCell align="left">{list.height}</TableCell>
               <TableCell align="left">{list.weight}</TableCell>

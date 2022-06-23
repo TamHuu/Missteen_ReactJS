@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
+import DialogMissTeen from "./Form/formDialoglistCandicates.jsx";
 import { lists } from "../service/list.js";
 
 
@@ -69,7 +69,7 @@ console.log(user)
   return (
     <React.Fragment>
       <CssBaseline />
-      <Typography
+      {/* <Typography
         style={{
           fontSize: "50px",
           margin: "43px",
@@ -80,7 +80,7 @@ console.log(user)
         }}
       >
         Danh sách thí sinh
-      </Typography>
+      </Typography> */}
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
@@ -108,11 +108,21 @@ console.log(user)
               </Grid>
             ))}
           </Grid>
-         
+       
+         {open&&<DialogMissTeen
+            onClose={handleClose}
+            onView={ViewHandler}
+            user={user}
+          />}
         </Container>
       </main>
       {/* Footer */}
-      <footer className={classes.footer}></footer>
+      <footer className={classes.footer}>
+        <ul>
+        <li>áhasygdsyufdsutyfd</li>
+        <li>áhasygdsyufdsutyfd</li>
+        <li>áhasygdsyufdsutyfd</li>
+        </ul></footer>
       {/* End footer */}
     </React.Fragment>
   );
