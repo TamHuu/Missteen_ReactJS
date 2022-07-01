@@ -19,8 +19,14 @@ function App() {
             />
             <div>
               {" "}
-              <img src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_tienphong.png" />
-              <img src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_senvang.png" />
+              <img
+                src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_tienphong.png"
+                alt="#"
+              />
+              <img
+                src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_senvang.png"
+                alt="#"
+              />
             </div>
           </div>
 
