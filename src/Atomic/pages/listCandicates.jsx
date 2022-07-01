@@ -13,7 +13,6 @@ import Container from "@material-ui/core/Container";
 import DialogMissTeen from "./Form/formDialoglistCandicates.jsx";
 import { lists } from "../service/list.js";
 
-
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -40,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
+    textAlign: "center",
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -55,7 +55,7 @@ export default function Album() {
   const [open, setOpen] = useState(false);
   const handleChange = (item) => {
     setOpen(true);
-    setUser(item)
+    setUser(item);
   };
   const handleClose = () => {
     setOpen(false);
@@ -64,7 +64,7 @@ export default function Album() {
     const idRow = DataTable.findIndex((item) => item.id === id);
     setDataDialog(DataTable[idRow]);
   };
-console.log(user)
+  console.log(user);
 
   return (
     <React.Fragment>
@@ -89,10 +89,14 @@ console.log(user)
               <Grid item key={list.id} xs={12} sm={6} md={4}>
                 <Card
                   className={classes.card}
-                  onClick={()=>handleChange(list)}
+                  onClick={() => handleChange(list)}
                 >
                   <CardMedia
-                    style={{ padding: "120px", margin: "27px" }}
+                    style={{
+                      padding: "120px",
+                      margin: "27px",
+                      height: "400px",
+                    }}
                     className={classes.cardMedia}
                     image={list.img}
                     title="Image title"
@@ -108,22 +112,17 @@ console.log(user)
               </Grid>
             ))}
           </Grid>
-       
-         {open&&<DialogMissTeen
-            onClose={handleClose}
-            onView={ViewHandler}
-            user={user}
-          />}
+
+          {open && (
+            <DialogMissTeen
+              title={"Thông tin thí sinh"}
+              onClose={handleClose}
+              onView={ViewHandler}
+              user={user}
+            />
+          )}
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <ul>
-        <li>áhasygdsyufdsutyfd</li>
-        <li>áhasygdsyufdsutyfd</li>
-        <li>áhasygdsyufdsutyfd</li>
-        </ul></footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }

@@ -15,51 +15,85 @@ import { IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-
+import DialogMissTeen from "./Form/formDialoglistCandicates";
+import DialogEdit from "./Form/formEdit";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
+    
   },
 });
 
 export default function DenseTable() {
   const classes = useStyles();
   const [DataTable, setDataTable] = useState(lists);
+  const [user, setUser] = useState({});
   const [dataDialog, setDataDialog] = useState({});
-  const [viewDialog, setViewDialog] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  /*Xem /* */
+ 
+  // view
+  const [edit,setEdit]=useState(false)
+const[dataEdit,setDataEdit]=useState({})
+
+  const handleChange = (item) => {
+    setOpen(true);
+    setUser(item)
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const ViewHandler = (id) => {
     const idRow = DataTable.findIndex((item) => item.id === id);
     setDataDialog(DataTable[idRow]);
-    setViewDialog(true);
   };
+console.log(user)
+// Sua
+const editHandleClose=()=>{
+ setEdit(false)
+
+}
+
+
+
+const handleChangeEdit = (item)=>{
+  setDataEdit(item)
+  setEdit(true)
+}
+
   return (
-    <TableContainer component={Paper} style={{ padding: "40px" }}>
-      {/* <div
-        style={{
-          fontSize: "30px",
-          backgroundColor: "mediumvioletred",
-          color: "ghostwhite",
-          width: "963px",
-          marginLeft: "250px",
-        }}
-      >
-        Quản lý danh sách thí sinh
-      </div> */}
-      <Table className={classes.table} size="small" aria-label="a dense table">
+    <>
+ {edit&&<DialogEdit
+                    dataEdit={dataEdit}
+                    onClose={editHandleClose}
+
+                    title={'Chinh sua'}
+                  />}
+               
+
+               
+
+
+      {open&&<DialogMissTeen
+                    onClose={handleClose}
+                    onView={ViewHandler}
+                    user={user}
+                    title={'Quản lý thí sinh'}
+                  />}
+                
+    <TableContainer  component={Paper} style={{ padding: "100px" }}>
+     
+      <Table className={classes.table} size="small" aria-label="a dense table"  >
         <TableHead>
           <TableRow>
             <TableCell style={{ fontSize: "20px" }}>STT</TableCell>
             <TableCell style={{ fontSize: "20px" }} align="left">
               Tên thí sinh
             </TableCell>
-            <TableCell style={{ fontSize: "20px" }} align="left">
+            <TableCell style={{ fontSize: "20px" }} align="center">
               Hình ảnh
             </TableCell>
-            {/* <TableCell style={{ fontSize: "20px" }} align="center">
-              Tuổi
-            </TableCell> */}
+         
             <TableCell style={{ fontSize: "20px" }} align="left">
               Năm Sinh
             </TableCell>
@@ -72,15 +106,15 @@ export default function DenseTable() {
             <TableCell style={{ fontSize: "20px" }} align="left">
               Công việc
             </TableCell>
-            <TableCell style={{ fontSize: "20px" }} align="left">
-              Thao tac
+            <TableCell style={{ fontSize: "20px" }} align="center">
+              Thao tác
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {lists.map((list) => (
-            <TableRow>
-              <TableCell component="th" scope="row">
+            <TableRow    >
+              <TableCell component="th" scope="row" >
                 {list.id}
               </TableCell>
               <TableCell align="left">{list.name}</TableCell>
@@ -92,26 +126,27 @@ export default function DenseTable() {
               <TableCell align="left">{list.height}</TableCell>
               <TableCell align="left">{list.weight}</TableCell>
               <TableCell align="left">{list.jobs}</TableCell>
-              <TableCell align="left">
+              <TableCell align="center" >
+                {/* Xem */}
                 <IconButton
                   variant="contained"
                   color="primary"
                   style={{ margin: 5 }}
-                  onClick={() => ViewHandler(list.id)}
+                  onClick={() =>{ ViewHandler(list.id); handleChange(list)}}
+       
                 >
+                 
                   <Visibility />
-                </IconButton>
-              </TableCell>
-              <TableCell align="left">
+                </IconButton>                      
+               
                 <IconButton
                   variant="contained"
                   color="primary"
                   style={{ margin: 5 }}
+                  onClick={()=>{handleChangeEdit(list)}}
                 >
                   <EditIcon />
-                </IconButton>
-              </TableCell>
-              <TableCell align="left">
+                </IconButton>                      
                 <IconButton
                   variant="contained"
                   color="primary"
@@ -119,11 +154,13 @@ export default function DenseTable() {
                 >
                   <DeleteIcon />
                 </IconButton>
+               
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }

@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
-import { Avatar } from "@material-ui/core";
+import { Avatar, Button, TextField } from "@material-ui/core";
 import { useState } from "react";
 const styles = (theme) => ({
   root: {
@@ -56,17 +56,17 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function DialogMissTeen({ user, onClose,title}) {
+export default function DialogEdit({ dataEdit,title,onClose} ) {
 
   return (
     <div>
-      <Dialog
-        onClose={onClose}
+      <Dialog 
         aria-labelledby="customized-dialog-title"
         open={true}
+        onClose={onClose}
       >
        
-          <DialogTitle id="customized-dialog-title" onClose={onClose}>
+          <DialogTitle id="customized-dialog-title">
          {title}
         </DialogTitle>
       
@@ -77,7 +77,7 @@ export default function DialogMissTeen({ user, onClose,title}) {
         >
           <Typography gutterBottom>
             <Avatar
-              src={user.img}
+              src={dataEdit.img}
               alt="Cindy Baker"
               variant="square"
               style={{
@@ -89,52 +89,57 @@ export default function DialogMissTeen({ user, onClose,title}) {
           </Typography>
           <div className="container_info" style={{ marginLeft: "30px" }}>
             <Typography gutterBottom>
-              <b>Số báo danh:</b> <label> {user.sbd}</label>
+              <b>Số báo danh:</b> 
+              <TextField  id="standard-multiline-flexible"
+       
+          multiline
+          maxRows={4}
+           value={dataEdit.sbd} />
             </Typography>
             <Typography gutterBottom>
               <b>Họ tên:</b>
-              <label>{user.name} </label>
+              <TextField value={dataEdit.name}/> 
             </Typography>
 
             <Typography gutterBottom>
               <b>Năm sinh: </b>
-              <label> {user.born}</label>
+              <TextField value={dataEdit.born}/> 
             </Typography>
             <Typography gutterBottom>
               <b>Email:</b>
-              <label> {user.email}</label>
+              <TextField value= {dataEdit.email}/>
             </Typography>
             <Typography gutterBottom>
               <b>SĐT :</b>
-              <label> {user.sdt}</label>
+              <TextField value={dataEdit.sdt}/>
             </Typography>
             <Typography gutterBottom>
               <b>Địa chỉ :</b>
-              <label> {user.address}</label>
+              <TextField  value={dataEdit.address}/>
             </Typography>
             <Typography gutterBottom>
               <b>Công việc :</b>
-              <label> {user.jobs}</label>
+              <TextField value={dataEdit.jobs}/> 
             </Typography>
             <Typography gutterottom>
               <b>Quốc tịch :</b>
-              <label> {user.nation}</label>
+              <TextField value={dataEdit.nation}/> 
             </Typography>
             <Typography gutterBottom>
               <b>Chiều cao :</b>
-              <label> {user.height}</label>
+              <TextField value={dataEdit.height}/> 
             </Typography>
             <Typography gutterBottom>
               <b>Cân nặng :</b>
-              <label> {user.weight}</label>
+              <TextField value={dataEdit.weight}/> 
             </Typography>
             <Typography gutterBottom>
               <b>Trình độ học vấn :</b>
-              <label> {user.education}</label>
+              <TextField value= {dataEdit.education}/>
             </Typography>
           </div>
         </DialogContent>
-        <DialogActions></DialogActions>
+        <DialogActions><Button style={{backgroundColor:'red'}}>Lưu</Button></DialogActions>
       </Dialog>
     </div>
   );

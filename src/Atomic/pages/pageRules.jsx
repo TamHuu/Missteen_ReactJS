@@ -1,11 +1,10 @@
 import * as React from "react";
 import { styled } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import CoverWeb from "../../assets/img/Cover-Web.jpg"
+import CoverWeb from "../../assets/img/Cover-Web.jpg";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Typography from "@material-ui/core/Typography";
-
 
 const drawerWidth = 240;
 
@@ -40,9 +39,8 @@ export default function Rules() {
   return (
     <Box
       sx={{
-        margin: "39px",
         display: "flex",
-        padding: "10rem",
+
         paddingTop: "0",
         paddingBottom: "0",
       }}
@@ -60,7 +58,7 @@ export default function Rules() {
         <Typography style={{ textAlign: "center", marginBottom: "100px" }}>
           {" "}
           <img
-            style={{ width: "100%", height: "438px" ,marginTop:'-58px'}}
+            style={{ width: "100%", height: "438px", marginTop: "-58px" }}
             src={CoverWeb}
             alt=""
           />{" "}
