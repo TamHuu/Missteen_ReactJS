@@ -21,11 +21,11 @@ function App() {
               {" "}
               <img
                 src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_tienphong.png"
-                alt="#"
+                alt=""
               />
               <img
                 src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_senvang.png"
-                alt="#"
+                alt=""
               />
             </div>
           </div>
