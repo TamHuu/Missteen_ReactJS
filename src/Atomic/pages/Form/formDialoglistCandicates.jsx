@@ -37,7 +37,7 @@ const DialogTitle = withStyles(styles)((props) => {
           onClick={onClose}
         >
           <CloseIcon />
-        </IconButton> 
+        </IconButton>
       ) : null}
     </MuiDialogTitle>
   );
@@ -56,8 +56,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function DialogMissTeen({ user, onClose,title}) {
-
+export default function DialogMissTeen({ user, onClose, title }) {
   return (
     <div>
       <Dialog
@@ -65,12 +64,14 @@ export default function DialogMissTeen({ user, onClose,title}) {
         aria-labelledby="customized-dialog-title"
         open={true}
       >
-       
-          <DialogTitle id="customized-dialog-title" onClose={onClose}>
-         {title}
+        <DialogTitle
+          id="customized-dialog-title"
+          onClose={onClose}
+          style={{ color: "black" }}
+        >
+          {title}
         </DialogTitle>
-      
-      
+
         <DialogContent
           dividers
           style={{ display: "flex", justifyContent: "space-between" }}

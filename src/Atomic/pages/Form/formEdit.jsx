@@ -37,7 +37,7 @@ const DialogTitle = withStyles(styles)((props) => {
           onClick={onClose}
         >
           <CloseIcon />
-        </IconButton> 
+        </IconButton>
       ) : null}
     </MuiDialogTitle>
   );
@@ -56,90 +56,124 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function DialogEdit({ dataEdit,title,onClose} ) {
-
+export default function DialogEdit({ dataEdit, title, onClose }) {
   return (
     <div>
-      <Dialog 
+      <Dialog
         aria-labelledby="customized-dialog-title"
         open={true}
         onClose={onClose}
       >
-       
-          <DialogTitle id="customized-dialog-title">
-         {title}
-        </DialogTitle>
-      
-      
-        <DialogContent
-          dividers
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <Typography gutterBottom>
+        <DialogTitle id="customized-dialog-title">{title}</DialogTitle>
+
+        <DialogContent dividers>
+          <Typography gutterBottom style={{ textAlign: "-webkit-center" }}>
             <Avatar
               src={dataEdit.img}
               alt="Cindy Baker"
               variant="square"
               style={{
-                width: "250px",
-                height: "309px",
+                width: "551px",
+                height: "300px",
               }}
             />
             {/* )} */}
           </Typography>
-          <div className="container_info" style={{ marginLeft: "30px" }}>
-            <Typography gutterBottom>
-              <b>Số báo danh:</b> 
-              <TextField  id="standard-multiline-flexible"
-       
-          multiline
-          maxRows={4}
-           value={dataEdit.sbd} />
-            </Typography>
-            <Typography gutterBottom>
-              <b>Họ tên:</b>
-              <TextField value={dataEdit.name}/> 
-            </Typography>
+          <div className="container_info" style={{ display: "grid" }}>
+            <TextField
+              label="Số báo danh"
+              id="TenDanhMuc"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.sbd}
+            />
 
-            <Typography gutterBottom>
-              <b>Năm sinh: </b>
-              <TextField value={dataEdit.born}/> 
-            </Typography>
-            <Typography gutterBottom>
-              <b>Email:</b>
-              <TextField value= {dataEdit.email}/>
-            </Typography>
-            <Typography gutterBottom>
-              <b>SĐT :</b>
-              <TextField value={dataEdit.sdt}/>
-            </Typography>
-            <Typography gutterBottom>
-              <b>Địa chỉ :</b>
-              <TextField  value={dataEdit.address}/>
-            </Typography>
-            <Typography gutterBottom>
-              <b>Công việc :</b>
-              <TextField value={dataEdit.jobs}/> 
-            </Typography>
-            <Typography gutterottom>
-              <b>Quốc tịch :</b>
-              <TextField value={dataEdit.nation}/> 
-            </Typography>
-            <Typography gutterBottom>
-              <b>Chiều cao :</b>
-              <TextField value={dataEdit.height}/> 
-            </Typography>
-            <Typography gutterBottom>
-              <b>Cân nặng :</b>
-              <TextField value={dataEdit.weight}/> 
-            </Typography>
-            <Typography gutterBottom>
-              <b>Trình độ học vấn :</b>
-              <TextField value= {dataEdit.education}/>
-            </Typography>
+            <TextField
+              label="Họ và tên"
+              id="TenDanhMuc"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.name}
+            />
+
+            <TextField
+              label="Năm sinh"
+              id="NamSinh"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.born}
+            />
+
+            <TextField
+              label="Email"
+              id="NamSinh"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.email}
+            />
+
+            <TextField
+              label="Số điện thoại"
+              id="NamSinh"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.sdt}
+            />
+
+            <TextField
+              label="Nơi ở hiện nay"
+              id="NamSinh"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.address}
+            />
+
+            <TextField
+              label="Nghề nghiệp"
+              id="NamSinh"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.jobs}
+            />
+
+            <TextField
+              label="Quốc tịch"
+              id="email"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.nation}
+            />
+
+            <TextField
+              label="Chiều cao"
+              id="Sdt"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.height}
+            />
+
+            <TextField
+              label="Cân nặng"
+              id="born"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.weight}
+            />
+
+            <TextField
+              label="Bằng cấp"
+              id="jobs"
+              variant="outlined"
+              maxRows={4}
+              value={dataEdit.education}
+            />
           </div>
         </DialogContent>
-        <DialogActions><Button style={{backgroundColor:'red'}}>Lưu</Button></DialogActions>
+        <DialogActions>
+          <Button style={{ backgroundColor: "blue", color: "white" }}>
+            Lưu
+          </Button>
+        </DialogActions>
       </Dialog>
     </div>
   );

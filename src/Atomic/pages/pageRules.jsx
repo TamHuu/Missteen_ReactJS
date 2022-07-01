@@ -49,7 +49,7 @@ export default function Rules() {
 
       <Main
         style={{
-          margin: "0 auto",
+          margin: "48px auto",
           padding: "0 1rem",
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }}

@@ -11,12 +11,13 @@ import Avatar from "@material-ui/core/Avatar";
 
 import { lists } from "../service/list";
 
-import { IconButton } from "@material-ui/core";
+import { Grid, IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DialogMissTeen from "./Form/formDialoglistCandicates";
 import DialogEdit from "./Form/formEdit";
+import AlertDialog from "./Form/formDelete";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -54,6 +55,11 @@ export default function DenseTable() {
   const handleChangeEdit = (item) => {
     setDataEdit(item);
     setEdit(true);
+  };
+  //Xóa
+  const removeChangeHandler = (id) => {
+    setDataTable(DataTable.filter((item) => item.id !== id));
+    // setRemove(id);
   };
 
   return (
@@ -94,18 +100,18 @@ export default function DenseTable() {
               </TableCell>
 
               <TableCell style={{ fontSize: "20px" }} align="left">
-                Năm Sinh
+                Năm sinh
               </TableCell>
               <TableCell style={{ fontSize: "20px" }} align="left">
                 Chiều cao
               </TableCell>
               <TableCell style={{ fontSize: "20px" }} align="left">
-                Cân Nặng
+                Cân nặng
               </TableCell>
               <TableCell style={{ fontSize: "20px" }} align="left">
                 Công việc
               </TableCell>
-              <TableCell style={{ fontSize: "20px" }} align="center">
+              <TableCell style={{ fontSize: "20px" }} align="left">
                 Thao tác
               </TableCell>
             </TableRow>
@@ -118,44 +124,54 @@ export default function DenseTable() {
                 </TableCell>
                 <TableCell align="left">{list.name}</TableCell>
                 <TableCell align="center">
-                  <Avatar src={list.img} variant="square"></Avatar>
+                  <Avatar
+                    style={{ width: "100px", height: "90px" }}
+                    src={list.img}
+                    variant="square"
+                  ></Avatar>
                 </TableCell>
                 {/* <TableCell align="left">{list.age}</TableCell> */}
                 <TableCell align="left">{list.born}</TableCell>
                 <TableCell align="left">{list.height}</TableCell>
                 <TableCell align="left">{list.weight}</TableCell>
                 <TableCell align="left">{list.jobs}</TableCell>
-                <TableCell align="center">
+                <TableCell align="left">
+                  <Grid container>
+                    <Grid item xs="auto" spacing={2}>
+                      {" "}
+                      <IconButton
+                        variant="contained"
+                        color="primary"
+                        style={{ margin: 5 }}
+                        onClick={() => {
+                          ViewHandler(list.id);
+                          handleChange(list);
+                        }}
+                      >
+                        <Visibility />
+                      </IconButton>
+                    </Grid>
+                    <Grid item xs="auto" spacing={2}>
+                      <IconButton
+                        variant="contained"
+                        color="primary"
+                        style={{ margin: 5 }}
+                        onClick={() => {
+                          handleChangeEdit(list);
+                        }}
+                      >
+                        <EditIcon />
+                      </IconButton>
+                    </Grid>
+                    <Grid item xs="auto" spacing={2}>
+                      <AlertDialog
+                        id={list.id}
+                        onRemove={removeChangeHandler}
+                        title={"Bạn có chắc muốn xóa danh mục này ?"}
+                      />
+                    </Grid>
+                  </Grid>
                   {/* Xem */}
-                  <IconButton
-                    variant="contained"
-                    color="primary"
-                    style={{ margin: 5 }}
-                    onClick={() => {
-                      ViewHandler(list.id);
-                      handleChange(list);
-                    }}
-                  >
-                    <Visibility />
-                  </IconButton>
-
-                  <IconButton
-                    variant="contained"
-                    color="primary"
-                    style={{ margin: 5 }}
-                    onClick={() => {
-                      handleChangeEdit(list);
-                    }}
-                  >
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton
-                    variant="contained"
-                    color="primary"
-                    style={{ margin: 5 }}
-                  >
-                    <DeleteIcon />
-                  </IconButton>
                 </TableCell>
               </TableRow>
             ))}

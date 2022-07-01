@@ -115,7 +115,7 @@ export default function Album() {
 
           {open && (
             <DialogMissTeen
-              title={"Thông tin thí sinh"}
+              title={"Thông Tin Thí Sinh"}
               onClose={handleClose}
               onView={ViewHandler}
               user={user}
