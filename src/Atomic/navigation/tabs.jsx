@@ -10,7 +10,7 @@ import Rules from "../pages/pageRules";
 import DenseTable from "../pages/pageManager";
 import Register from "../pages/pageRegister";
 import Album from "../pages/listCandicates";
-import LogoHH from "../../assets/img/LogoHHV.png"
+import LogoHH from "../../assets/img/LogoHHV.png";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -96,23 +96,22 @@ export default function Navigation() {
           <div className="logo">
             <img
               src={LogoHH}
-              style={{ width: "200px", marginLeft: "500px" }}
+              style={{ width: "250px", marginLeft: "500px" }}
             ></img>
           </div>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Rules/>
- 
+        <Rules />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Register/>
+        <Register />
       </TabPanel>
       <TabPanel value={value} index={2}>
-     <Album/>
+        <Album />
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <DenseTable/>
+        <DenseTable />
       </TabPanel>
     </div>
   );
