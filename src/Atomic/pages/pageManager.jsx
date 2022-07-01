@@ -75,7 +75,7 @@ export default function DenseTable() {
         />
       )}
 
-      <TableContainer component={Paper} style={{ margin: " 57px, 0" }}>
+      <TableContainer component={Paper} style={{ margin: " 71px 0" }}>
         <Table
           className={classes.table}
           size="small"
@@ -83,7 +83,9 @@ export default function DenseTable() {
         >
           <TableHead>
             <TableRow>
-              <TableCell style={{ fontSize: "20px" }}>STT</TableCell>
+              <TableCell style={{ fontSize: "20px" }} align="left">
+                STT
+              </TableCell>
               <TableCell style={{ fontSize: "20px" }} align="left">
                 Tên thí sinh
               </TableCell>
@@ -111,7 +113,7 @@ export default function DenseTable() {
           <TableBody>
             {lists.map((list) => (
               <TableRow>
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" align="left">
                   {list.id}
                 </TableCell>
                 <TableCell align="left">{list.name}</TableCell>
