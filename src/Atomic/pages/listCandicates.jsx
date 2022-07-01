@@ -36,7 +36,16 @@ const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     paddingTop: "56.25%", // 16:9
+    padding: "120px",
+    margin: "27px",
+    height: "400px",
+    cursor: "pointer",
+    "&:hover": {
+      opacity: "0.5",
+      margin: "1px",
+    },
   },
+
   cardContent: {
     flexGrow: 1,
     textAlign: "center",
@@ -92,11 +101,7 @@ export default function Album() {
                   onClick={() => handleChange(list)}
                 >
                   <CardMedia
-                    style={{
-                      padding: "120px",
-                      margin: "27px",
-                      height: "400px",
-                    }}
+                    style={{}}
                     className={classes.cardMedia}
                     image={list.img}
                     title="Image title"

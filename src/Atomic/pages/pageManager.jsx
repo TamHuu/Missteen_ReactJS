@@ -14,7 +14,7 @@ import { lists } from "../service/list";
 import { Grid, IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
+
 import DialogMissTeen from "./Form/formDialoglistCandicates";
 import DialogEdit from "./Form/formEdit";
 import AlertDialog from "./Form/formDelete";
@@ -68,7 +68,7 @@ export default function DenseTable() {
         <DialogEdit
           dataEdit={dataEdit}
           onClose={editHandleClose}
-          title={"Chinh sua"}
+          title={"Quản lý Thí Sinh"}
         />
       )}
 
@@ -77,7 +77,7 @@ export default function DenseTable() {
           onClose={handleClose}
           onView={ViewHandler}
           user={user}
-          title={"Quản lý thí sinh"}
+          title={"Quản lý Thí Sinh"}
         />
       )}
 
