@@ -1,5 +1,8 @@
 import NavTabs from "./Atomic/navigation/tabs";
 import React from "react";
+import LogoHH from "./assets/img/LogoHHV.png";
+import logo_tienphong from "./assets/img/logo_tienphong.png";
+import logo_senvang from "./assets/img/logo_senvang.png";
 function App() {
   return (
     <div>
@@ -13,20 +16,11 @@ function App() {
           style={{ display: "flex", justifyContent: "space-evenly" }}
         >
           <div className="logoHH" style={{ padding: "25px 0" }}>
-            <img
-              style={{ width: "300px" }}
-              src="http://hhvn.com.vn/wp-content/uploads/2020/05/Logo-HHVn2020-1024x294.png"
-            />
+            <img style={{ width: "300px" }} src={LogoHH} />
             <div>
               {" "}
-              <img
-                src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_tienphong.png"
-                alt=""
-              />
-              <img
-                src="http://hhvn.com.vn/wp-content/themes/hhvn/images/logo_senvang.png"
-                alt=""
-              />
+              <img src={logo_tienphong} alt="" />
+              <img src={logo_senvang} alt="" />
             </div>
           </div>
 
