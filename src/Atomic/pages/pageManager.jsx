@@ -77,7 +77,7 @@ export default function DenseTable() {
           onClose={handleClose}
           onView={ViewHandler}
           user={user}
-          title={"Quản lý Thí Sinh"}
+          title={"Quản Lý Thí Sinh"}
         />
       )}
 
