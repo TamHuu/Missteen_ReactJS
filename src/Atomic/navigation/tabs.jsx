@@ -11,11 +11,13 @@ import DenseTable from "../pages/pageManager";
 import Register from "../pages/pageRegister";
 import Album from "../pages/listCandicates";
 import LogoHH from "../../assets/img/LogoHHV.png";
+import { Grid } from "@material-ui/core";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
+      style={{ justifyContent: "space-between" }}
       role="tabpanel"
       hidden={value !== index}
       id={`scrollable-auto-tabpanel-${index}`}
@@ -71,7 +73,9 @@ export default function Navigation() {
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
-          style={{ backgroundColor: "mediumvioletred" }}
+          style={{
+            backgroundColor: "mediumvioletred",
+          }}
         >
           <Tab
             style={{ color: "ghostwhite" }}
@@ -94,13 +98,11 @@ export default function Navigation() {
             {...a11yProps(3)}
           />
           <div className="logo">
-            <img
-              src={LogoHH}
-              style={{ width: "250px", marginLeft: "500px" }}
-            ></img>
+            <img src={LogoHH} style={{ width: "250px", marginLeft: "500px" }} />
           </div>
         </Tabs>
       </AppBar>
+
       <TabPanel value={value} index={0}>
         <Rules />
       </TabPanel>

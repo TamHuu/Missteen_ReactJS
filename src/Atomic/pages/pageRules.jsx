@@ -49,7 +49,8 @@ export default function Rules() {
 
       <Main
         style={{
-          margin: "48px auto",
+          maxWidth: "1200px",
+          margin: "11px auto",
           padding: "0 1rem",
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }}
@@ -58,7 +59,7 @@ export default function Rules() {
         <Typography style={{ textAlign: "center", marginBottom: "100px" }}>
           {" "}
           <img
-            style={{ width: "100%", height: "438px", marginTop: "-58px" }}
+            style={{ width: "100%", height: "438px" }}
             src={CoverWeb}
             alt=""
           />{" "}
